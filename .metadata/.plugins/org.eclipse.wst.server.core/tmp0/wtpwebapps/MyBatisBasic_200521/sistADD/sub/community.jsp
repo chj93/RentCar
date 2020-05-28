@@ -1,3 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="dao.RentCarDAO"%>
+<%@page import="model.NoticeBean"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -171,12 +176,50 @@
 	
 </style>
 	
-	
-	
-	
-	
+<script>
+function searchData(){
+	var obj=document.notice;
+	if(!obj.searchValue.value){
+		alert('검색어를 입력해주세요');
+		obj.data.value='';
+		return false;
+	}
+	obj.submit();
+}
+</script>
   </head>
   <body>
+<%
+	request.setCharacterEncoding("UTF-8");
+	List<NoticeBean>list=null;
+	HashMap<String,Object>map=new HashMap<String,Object>();
+	String searchValue=request.getParameter("searchValue");
+	map.put("searchValue", searchValue);
+	int pageSize=2;
+    int Row=0;
+    int totalPage=1;
+    int currentPage=1;
+    Row=RentCarDAO.getRow(map);
+    totalPage=(totalPage=Row%pageSize==0?(Row/pageSize):(Row/pageSize)+1)==0?1:totalPage;
+    try{
+    	currentPage=Integer.parseInt(request.getParameter("page"));
+    }catch(Exception e){
+    	//e.printStackTrace();
+    }
+    int start=1+(currentPage-1)*pageSize;
+    int end=pageSize+(currentPage-1)*pageSize;
+    int currentBlock=currentPage%pageSize==0?(currentPage/pageSize):(currentPage/pageSize)+1;
+    int startPage=1+(currentBlock-1)*pageSize;
+    int endPage=(pageSize+(currentBlock-1)*pageSize);
+    endPage=(endPage)>=totalPage?totalPage:endPage;
+    out.println(totalPage+" "+currentBlock);
+    map.put("start",start);
+    map.put("end",end);	 
+	list=RentCarDAO.selectnotice(map);
+	
+	
+%>
+  <form name="notice" method="POST" action="">
     <!------------------ .page=전체 영역 ------------------->
     <div class="page" id="page">
       <!------------------ Header ------------------->
@@ -224,16 +267,16 @@
 
 	<div class="content-wrap">
 		<div id="content">
-			<div class="left">
+			<div class="content left">
             	<div class="page-header">
                     <h3 class="h3">공지사항</h3>
                     <div class="form-search icon">
                     
             			<input type="text" id="searchValue" placeholder="검색어 입력" name="searchValue" value="">
-            			<a class="button button-sm button-secondary button-nina" href="#">검색</a>
+            			<a class="button button-sm button-secondary button-nina" href="javascript:searchData()">검색</a>
             			<!-- <button type="button" onclick="fncPage(1);">검색</button> -->
                     <a class="button button-sm button-secondary button-nina" href="#">글쓰기</a>
-                    <a class="button button-sm button-secondary button-nina" href="#">새로고침</a>
+                    <a class="button button-sm button-secondary button-nina" href="community.jsp">새로고침</a>
             			
             			
                     </div>
@@ -245,7 +288,7 @@
 
 
 
-<table class="panel table table-stripe">
+				<table class="panel table table-stripe">
                     <thead>
                         <tr>
                             <th scope="col">번호</th>
@@ -255,29 +298,61 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <%
+                    	for(NoticeBean notice: list){
+                    %>
                     	<tr>
-                            <th scope="col">1</th>
-                            <th scope="col">문의합니다</th>
-                            <th scope="col">최서현</th>
-                            <th scope="col">2020-05-18</th>
+                            <th scope="col" id="no"><%=notice.getNtcno() %></th>
+                           <th scope="col" id="ntitle"> <a href=""><%=notice.getNtitle() %></a></th>
+                            <th scope="col" id="writer">운영자</th>
+                            <th scope="col" id="nregdate"><%=notice.getNregdate() %></th>
                         </tr>
-  
+  					<%
+                    	}
+  					%>
                     </tbody>
   </table>
   
   	  <div class="pagination">
 		 <ul>
-			<li class="selected">1</li>
-		
-			<li><a href="#">2</a></li> 
-		
-			<li><a href="#">3</a></li> 
-		
-			<li><a href="#">4</a></li> 
-		
-			<li><a href="#">5</a></li> 
-
-		</ui>		
+		 		<li><a href="community.jsp?page=1">처음</a></li>
+		 	<%
+			   if(currentBlock>1){
+			%>
+				<li><a href="community.jsp?page=<%=startPage-1%>">이전</a></li>
+			<%
+				}else{
+			%>
+				<li><a href="#">이전</a></li>
+			<%
+				}
+			%>
+			<%
+				for(int i=startPage;i<=endPage;i++){
+					if(i==currentPage){
+			%>
+						<li class="selected"><%=i %></li>
+			<%		   
+				}else{
+			%>
+						<li><a href="community.jsp?page=<%=i%>"><%=i %></a></li> 
+			<%
+					}
+				}
+			%>
+			<%
+				if(totalPage>endPage){
+			%>
+				<li><a href="community.jsp?page=<%=endPage+1%>">다음</a></li>
+			<%
+				}else{
+			%>
+				<li><a href="#">다음</a></li>
+			<%
+				}
+			%>
+				<li><a href="community.jsp?page=<%=totalPage%>">끝</a></li>
+		</ui>	
      </div><!--//pagination-->
       	
 		</div><!--//left-->
@@ -323,5 +398,6 @@
     <script src="../js/core.min.js"></script>
     <script src="../js/script.js"></script>
     <!-- coded by barber-->
+     </form>
   </body>
 </html>

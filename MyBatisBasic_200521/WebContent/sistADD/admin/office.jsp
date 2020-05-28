@@ -16,6 +16,59 @@
 
 <script type="text/javascript">
 
+$(function(){
+	
+	  $("input#all").click(function(event){		  
+			 $("input[name='nt']").each(function(){			 
+				 $(this).prop("checked",$("input#all").is(":checked"));			 
+			 });
+		  });	
+		  $("input[name='nt']").click(function(){
+			  var state=false;
+			  $("input[name='nt']").each(function(){	//하나씩 체크 확인	 
+				  if(!$(this).prop("checked")){			//check되지 않으면 true
+					  state=true;
+				  }
+			  });//each
+			  $("input#all").prop("checked",(!state));   
+		  });
+
+		  $("a#ckDel").click(function(){
+			   var st=0;
+			 $("input[name='nt']").each(function(){
+				if($(this).is(":checked")){
+					st++;
+				}//if 
+			 });//each
+			 if(st<=0){
+				 alert('CheckBoxCheck');
+				 return false;
+			 }
+			 $("form[name='delForm']").submit();
+		  });
+
+		  $("a[name='del']").click(function(){		//삭제버튼 클릭하면
+			  if($(this).text()=='DEL'){			//'DEL'을 누르면
+				alert('DEL버튼');
+			   location.reload();			//새로고침 하는 명령어
+			  }  	  
+			 $(this).html("DEL");			//삭제버튼 text를 'DEL'로 바꿈
+			 var delId=this.id;
+			 $("input[type=checkbox]").each(function(){
+				 if(delId==this.id){			 
+				  $(this).prop("checked",true);
+				  $("a[name='del']").each(function(){
+					 if(this.id!=del){
+						$(this).html("삭제");
+					 } 
+				  });
+				 }else{
+					 $(this).prop("checked",false);
+				 }			
+			 });
+		  });
+});
+
 </script>
 
 
@@ -41,7 +94,14 @@
 	</style>
 	
   </head>
+  
   <body>
+  <%
+	String no= request.getParameter("nono");
+  
+  %>
+  <%-- <%=no %> --%>
+   <form action="office.jsp" name="delForm" method="post">    
     <!------------------ .page=전체 영역 ------------------->
     <div class="page" id="page">
       <!------------------ Header ------------------->
@@ -95,7 +155,8 @@
 		   <h2>지점 목록</h2>
 			   <a class="button button-sm button-secondary button-nina list" href="#">등록</a>
 			   <a class="button button-sm button-secondary button-nina list" href="#">수정</a>
-			   <a class="button button-sm button-secondary button-nina list" href="#">삭제</a>
+			   <!-- <a class="button button-sm button-secondary button-nina list" id="ckDel" >삭제</a> -->
+			   <a class="button button-sm button-secondary button-nina list" name="del" id="${i.no}">삭제</a>
 		  </div>
 		
 		  
@@ -113,11 +174,12 @@
 		    </thead>
 		    
 		    <tbody>
-		      <%
-		      	for (OfficeBean b: list){
-		      %>
-		    	<tr>
-			        <td><%=b.getOfcno() %></td>
+		      <%for (OfficeBean b: list){ %>
+		    	<tr lang="${b.no}">
+		    		<td>
+		    		<input type="checkbox" id="<%=b.getOfcno() %>"  name="nt" value="<%=b.getOfcno() %>" />
+		    		${cnt.count}<a id="nono" name="nono"><%=b.getOfcno() %></a>
+		    		</td>
 			        <td><%=b.getOfcname() %></td>
 			        <td><%=b.getMgrname() %></td>
 			        <td><%=b.getMemno() %></td>
@@ -130,7 +192,7 @@
 		    </tbody>
 		  </table>
 		</div>
-	
+	</form>
 		
 	</section>
  

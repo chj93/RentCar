@@ -6,7 +6,15 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import model.NoticeBean;
 import model.OfficeBean;
+
+import model.FuelBean;
+import model.NoticeBean;
+import model.RentCarBean;
+
+
+
 
 public class RentCarDAO {
 	private static SqlSessionFactory sqlSessionFactory;
@@ -31,6 +39,59 @@ public class RentCarDAO {
 				}
 			}
 			return null;
+	}
+	
+	public static List<NoticeBean> selectnotice(HashMap<String, Object>map) {
+		SqlSession sqlSession=null;
+		try {
+			sqlSession=sqlSessionFactory.openSession();
+			return sqlSession.selectList("selectnotice",map);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if(sqlSession!=null)sqlSession.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
 		}
-
+		return null;
+	}
+	
+	public static void insertnotice(NoticeBean bean) {
+		SqlSession sqlSession=null;
+		try {
+			sqlSession=sqlSessionFactory.openSession();
+			sqlSession.insert("insertnotice",bean);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			sqlSession.rollback();
+		}finally {
+			try {
+				if(sqlSession!=null)sqlSession.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+	public static int getRow(HashMap<String, Object>map) {
+		SqlSession sqlSession=null;
+		try {
+			sqlSession=sqlSessionFactory.openSession();
+			return sqlSession.selectOne("getRow",map);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if(sqlSession!=null)sqlSession.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return 0;
+	}
 }

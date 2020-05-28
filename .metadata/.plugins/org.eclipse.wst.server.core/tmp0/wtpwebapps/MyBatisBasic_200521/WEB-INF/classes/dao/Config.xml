@@ -15,6 +15,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     -->
     <typeAliases><!-- vo객체의 별칭을 모아서 관리 -->
       <!-- <typeAlias type="my.dao.GuestBookVO" alias="GuestBook"/> -->
+      <typeAlias type="model.NoticeBean" alias="notice"/>
     </typeAliases>
     <!-- DB연동 -->
     <environments default="development">
