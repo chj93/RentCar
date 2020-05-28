@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/C::/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.driver.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="10.2.0.1.0">
+			<jar fileName="C:\app\SIST108\product\11.2.0\dbhome_1\owb\wf\lib\ojdbc14.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="D:/javaEx/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/D::/javaEx/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>apple</name>
+			<username>APPLE</username>
+			<password>APPLE</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:orcl</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.driver.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\app\SIST108\product\11.2.0\dbhome_1\owb\wf\lib\ojdbc14.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>update member set mlevel='0'
+where memno=100</queryString>
+				</query>
+				<query>
+					<queryString>SELECT OFCNO,OFCNAME,MGRNAME,MEMNO,OFCTEL,OFCADDR
+		FROM OFFICE
+		ORDER BY OFCNO DESC</queryString>
+				</query>
+				<query>
+					<queryString>SELECT OFCNO,OFCNAME,MGRNAME,MEMNO,OFCTEL,OFCADDR
+		FROM OFFICE
+		ORDER BY OFCNO</queryString>
+				</query>
+				<query>
+					<queryString>select * from office</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=1
+where rcno=26</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=1
+where rcno=27</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=1
+where rcno=28</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=1
+where rcno between 28 and 35</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=2
+where rcno between 41 and 50</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=3
+where rcno between 51 and 55</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set navino=1
+where navino is null</queryString>
+				</query>
+				<query>
+					<queryString>select * from rentcar</queryString>
+				</query>
+				<query>
+					<queryString>SELECT RENTCAR.RCNO,RENTCAR.RCMODEL,RENTCAR.RCPRICE,RENTCAR.RCIMG,RENTCAR.RCSTATE,OFFICE.OFCNAME,NAVIGATION.NAVINAME,FUEL.FUELNAME,SEGMENT.SGMTNAME,MAKER.MNAME
+		FROM RENTCAR, OFFICE, NAVIGATION, SEGMENT, FUEL, MAKER
+		WHERE RENTCAR.OFCNO = OFFICE.OFCNO AND SEGMENT.SGMTNO = RENTCAR.SGMTNO AND RENTCAR.MAKERNO = MAKER.MAKERNO AND FUEL.FUELNO = RENTCAR.FUELNO AND RENTCAR.NAVINO = NAVIGATION.NAVINO</queryString>
+				</query>
+				<query>
+					<queryString>select * from member</queryString>
+				</query>
+				<query>
+					<queryString>CREATE SEQUENCE MEMBER_SEQ_NO</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE NOTICE MODIFY(NTITLE VARCHAR2(80))</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * FROM FUEL</queryString>
+				</query>
+				<query>
+					<queryString>DELETE FROM RENTLIST CASCADE</queryString>
+				</query>
+				<query>
+					<queryString>ROLLBACK</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * FROM  RENTLIST</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/C::/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/C::/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

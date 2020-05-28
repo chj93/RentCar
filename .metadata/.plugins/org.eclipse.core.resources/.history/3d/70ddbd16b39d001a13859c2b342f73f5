@@ -1,0 +1,13 @@
+package dao;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class RentCarDAO {
+	private static SqlSessionFactory sqlSessionFactory;
+	static{
+		sqlSessionFactory = SqlSessionFactoryManager.getSqlSessionFactory();
+	}
+	
+	public static List<OfficeBe>
+
+}

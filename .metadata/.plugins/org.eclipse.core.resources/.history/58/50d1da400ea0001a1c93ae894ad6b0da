@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>리포트</title>
+    <style type="text/css">
+        .entity{
+            border: solid 1px #7E2828;
+            margin-bottom: 20px;
+        }
+        .header{
+            background-color: #7E2828;
+            color: white;
+        }
+        .column-header{
+            background-color: #E8E8E8;
+        }
+        td{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>내 스키마의 템플릿</h2>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">회원정보 (MEMBER)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>회원번호(PK)</td>
+        <td>MEMNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>회원아이디</td>
+        <td>MEMID</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>비밀번호</td>
+        <td>MEMPW</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>이름</td>
+        <td>MNAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주소</td>
+        <td>MADRESS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>전화번호</td>
+        <td>MEMTEL</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>이메일</td>
+        <td>MEMAIL</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>생년월일</td>
+        <td>MBIRTH</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>권한</td>
+        <td>MLEVEL</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">렌트카정보 (RENTCAR)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>차량번호(PK)</td>
+        <td>RCNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>모델명</td>
+        <td>RCMODEL</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>단위가격</td>
+        <td>RCPRICE</td>
+        <td>N/A</td>
+        <td>NUMBER(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>이미지</td>
+        <td>RCIMG</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>상태</td>
+        <td>RCSTATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>지점번호(FK)</td>
+        <td>OFCNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>네비게이션번호(FK)</td>
+        <td>NAVINO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>연료번호(FK)</td>
+        <td>FUELNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>차종번호(FK)</td>
+        <td>SGMTNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제조사번호(FK)</td>
+        <td>MAKERNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">지점정보 (OFFICE)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>지점번호(PK)</td>
+        <td>OFCNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>지점명</td>
+        <td>OFCNAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>지점장이름</td>
+        <td>MGRNAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>지점장번호(FK)</td>
+        <td>MEMNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>TEL</td>
+        <td>OFCTEL</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>주소</td>
+        <td>OFCADDR</td>
+        <td>N/A</td>
+        <td>VARCHAR2(50)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">렌트계약정보 (RENTLIST)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>계약번호(PK)</td>
+        <td>RENTNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>대여일</td>
+        <td>RENTDATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>반납일</td>
+        <td>RETURNDATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>차량번호(FK)</td>
+        <td>CARNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>회원번호(FK)</td>
+        <td>MEMBERNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>인원수</td>
+        <td>PSGNUM</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>지점번호(FK)</td>
+        <td>OFCNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>금액</td>
+        <td>RPRICE</td>
+        <td>N/A</td>
+        <td>NUMBER(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">공지사항 (NOTICE)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>공지번호(PK)</td>
+        <td>NTCNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>NTITLE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성자(FK)</td>
+        <td>WRITER</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>NCONTENTS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성일</td>
+        <td>NREGDATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">이벤트 (EVENT)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>이벤트번호(PK)</td>
+        <td>EVTNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>ETITLE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성자(FK)</td>
+        <td>WRITER</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>ECONTENTS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성일</td>
+        <td>EREGDATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">자주묻는질문 (FAQ)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>FAQ번호(PK)</td>
+        <td>FAQNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>FTITLE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성자(FK)</td>
+        <td>WRITER</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>FCONTENTS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">문의게시판 (QNA)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>문의번호(PK)</td>
+        <td>QNANO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>QTITLE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성자(FK)</td>
+        <td>WRITER</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>비밀번호</td>
+        <td>QPASS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>QCONTENTS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성일</td>
+        <td>REGDATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>답변</td>
+        <td>QANSWER</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>상태</td>
+        <td>QSTATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(10)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">후기게시판 (REVIEW)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>후기번호(PK)</td>
+        <td>RVIEWNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>RTITLE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성자(FK)</td>
+        <td>RUSER</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>비밀번호</td>
+        <td>RPASS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>RCONTENTS</td>
+        <td>N/A</td>
+        <td>VARCHAR2(100)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>별점</td>
+        <td>SCORE</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>작성일</td>
+        <td>RREGDATE</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>계약번호(FK)</td>
+        <td>RENTNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">네비게이션 (NAVIGATION)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>네비게이션번호(PK)</td>
+        <td>NAVINO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>네비게이션이름</td>
+        <td>NAVINAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">연료 (FUEL)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>연료번호(PK)</td>
+        <td>FUELNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>연료종류</td>
+        <td>FUELNAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">차종 (SEGMENT)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>차종번호(PK)</td>
+        <td>SGMTNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>차종이름</td>
+        <td>SGMTNAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table class="entity" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="6" class="header">제조사 (MAKER)</td>
+    </tr>
+    <tr class="column-header">
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>제조사번호(PK)</td>
+        <td>MAKERNO</td>
+        <td>N/A</td>
+        <td>NUMBER(5)</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>제조사이름</td>
+        <td>MNAME</td>
+        <td>N/A</td>
+        <td>VARCHAR2(20)</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</body>
+</html>

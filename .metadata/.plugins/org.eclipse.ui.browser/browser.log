@@ -1,0 +1,13 @@
+
+5월 21, 2020 20:01:02.85 NEW SESSION
+5월 21, 2020 20:01:02.85 [101276:88352:0521/200102.853:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:02:30.63 [101276:88352:0521/200230.630:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:02:52.74 [101276:88352:0521/200252.740:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:04:02.61 [101276:88352:0521/200402.618:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:09:37.44 [101276:88352:0521/200937.446:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:10:35.06 [101276:88352:0521/201035.062:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:10:58.07 [101276:88352:0521/201058.073:ERROR:CONSOLE(115)] "File system error: A requested file or directory could not be found at the time an operation was processed. when requesting entry ''", source: devtools://devtools/bundled/persistence/persistence.js (115)
+5월 21, 2020 20:58:20.91 [129604:145436:0521/205820.914:ERROR:socket_stream.cc(218)] Closing stream with result -2
+5월 22, 2020 13:49:42.75 [129604:145436:0522/134942.749:ERROR:socket_stream.cc(218)] Closing stream with result -2
+5월 22, 2020 13:49:42.88 [129604:145436:0522/134942.881:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+5월 22, 2020 13:49:47.96 [129604:145436:0522/134947.962:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106

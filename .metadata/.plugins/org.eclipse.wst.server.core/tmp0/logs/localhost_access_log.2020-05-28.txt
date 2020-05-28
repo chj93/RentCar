@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [28/May/2020:09:31:53 +0900] "GET /MyBatisBasic_200521/sistADD/adminIndex.jsp HTTP/1.1" 200 7555
+0:0:0:0:0:0:0:1 - - [28/May/2020:09:31:55 +0900] "GET /MyBatisBasic_200521/sistADD/admin/member.jsp HTTP/1.1" 200 6540
+0:0:0:0:0:0:0:1 - - [28/May/2020:09:31:57 +0900] "GET /MyBatisBasic_200521/sistADD/adminIndex.jsp HTTP/1.1" 200 7555
+0:0:0:0:0:0:0:1 - - [28/May/2020:10:06:06 +0900] "GET /MyBatisBasic_200521/sistADD/admin/member.jsp HTTP/1.1" 200 6540
+0:0:0:0:0:0:0:1 - - [28/May/2020:10:06:10 +0900] "GET /MyBatisBasic_200521/sistADD/admin/office.jsp HTTP/1.1" 200 7177
+127.0.0.1 - - [28/May/2020:10:39:43 +0900] "GET / HTTP/1.1" 404 750
