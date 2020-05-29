@@ -72,6 +72,33 @@ public class RentCarBean {
 	public void setMakerno(int makerno) {
 		this.makerno = makerno;
 	}
-
+	public RentCarBean() {
+		super();
+	}
+	public RentCarBean(int rcno, String rcmodel, int rcprice, String rcimg, String rcstate, int ofcno, int navino,
+			int fuelno, int sgmtno, int makerno) {
+		super();
+		this.rcno = rcno;
+		this.rcmodel = rcmodel;
+		this.rcprice = rcprice;
+		this.rcimg = rcimg;
+		this.rcstate = rcstate;
+		this.ofcno = ofcno;
+		this.navino = navino;
+		this.fuelno = fuelno;
+		this.sgmtno = sgmtno;
+		this.makerno = makerno;
+	}
+	
+	public RentCarBean(int ofcno) {
+		super();
+		this.ofcno = ofcno;
+	}
+	@Override
+	public String toString() {
+		return "RentCarBean [rcno=" + rcno + ", rcmodel=" + rcmodel + ", rcprice=" + rcprice + ", rcimg=" + rcimg
+				+ ", rcstate=" + rcstate + ", ofcno=" + ofcno + ", navino=" + navino + ", fuelno=" + fuelno
+				+ ", sgmtno=" + sgmtno + ", makerno=" + makerno + "]";
+	}
 	
 }

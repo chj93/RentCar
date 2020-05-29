@@ -10,7 +10,7 @@
 <!DOCTYPE html>
  <html class="wide wow-animation" lang="en"> 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-<script  src="/web2/script/member.js" charset="UTF-8"></script>
+<script  src="../js/member.js" charset="UTF-8"></script>
   
  <style>
 
@@ -105,7 +105,7 @@ a#send{
 							<!-- logo -->
 							<div class="rd-navbar-brand">
 								<a class="brand-name" href="../index.jsp"><img
-									class="logo-default" src="../../images/logo.png" alt="" width="208"
+									class="logo-default" src="../images/logo.png" alt="" width="208"
 									height="46" /><img class="logo-inverse"
 									src="../images/logo-inverse-208x46.png" alt="" width="208"
 									height="46" /></a>
@@ -115,7 +115,7 @@ a#send{
 						<div class="rd-navbar-aside-center">
 							<div class="rd-navbar-nav-wrap">
 								<ul class="rd-navbar-nav">
-									<li class="active"><a href="#menu">HOME</a> <!-- 예약하기/예약확인/ -->
+									<li class="active"><a href="../index.jsp">HOME</a> <!-- 예약하기/예약확인/ -->
 									</li>
 									<li><a href="#branchGuide">예약하기</a></li>
 									<li><a href="#reviews">커뮤니티</a></li>

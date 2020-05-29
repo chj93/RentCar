@@ -120,6 +120,8 @@ $(function(){
               <div class="rd-navbar-aside-center">
                 <div class="rd-navbar-nav-wrap">
                   <ul class="rd-navbar-nav">
+                  	 <li><a href="member.jsp">회원관리</a>
+                    </li>
                     <li><a href="#">예약관리</a>
                     </li>
                     <li><a href="#">지점관리</a>

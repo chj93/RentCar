@@ -3,4 +3,5 @@ com.quantum.log.QuantumLog.logLevel=info
 eclipse.preferences.version=1
 org.eclipse.ui.examples.templateeditor.customtemplates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
 quantum.SQLEditorPreferences.ignoredWords=;
-quantum.text.color=255,255,255
+quantum.table.color=0,0,0
+quantum.text.bold=true

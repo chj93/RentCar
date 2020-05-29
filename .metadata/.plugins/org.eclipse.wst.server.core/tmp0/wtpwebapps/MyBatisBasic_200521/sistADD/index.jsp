@@ -31,7 +31,7 @@ $(function(){
 		});	
 		
 		$("a#mypage").click(function(){
-			location.href="myPage.jsp";
+			location.href="sub/myPage.jsp";
 	 	});
 	 
 	});
@@ -39,11 +39,6 @@ $(function(){
 });
 		
 </script>
-<%
- boolean idse =session.getAttribute("id")==null;
-System.out.print(idse);
-%>
-
 
   <head>
     <!-- Site Title-->
@@ -101,22 +96,21 @@ System.out.print(idse);
 					if (session.getAttribute("id") == null) {
 				%>
 				<a class="button button-sm button-secondary button-nina"
-					href="login.jsp">Login</a>
+					href="sub/login.jsp">Login</a>
+				<a class="button button-sm button-secondary button-nina" href="sub/joinRentcar.jsp">Join</a>
 				<%
 					} else {
 						String userid = (String) session.getAttribute("id");
 						
 				%>
 				<b><%=userid%>님 환영합니다</b>
-				<a class="button button-sm button-secondary button-nina" href="logoutPro.jsp">Logout</a>
+				<a class="button button-sm button-secondary button-nina" href="sub/logoutPro.jsp">Logout</a>
 				<a class="button button-sm button-secondary button-nina" name="mypage" id="mypage" >MyPage</a>
 				<%
 					}
 				%>
 
 
-						<a class="button button-sm button-secondary button-nina"
-							href="sub/joinRentcar.jsp">Join</a>
 					</div>
 				</div>
 			</nav>          
@@ -185,7 +179,7 @@ System.out.print(idse);
               <div class="col-lg-6 col-xxl-5">
                 <div class="form-request form-request-modern bg-gray-lighter novi-background">
                   <!-- <h4>SIST RENT CAR</h4> --> 
-                  <form action="reserve.jsp" class="rd-mailform form-fix" id="reserve" name="reserve" method="post">
+                  <form action="sub/reserve.jsp" class="rd-mailform form-fix" id="reserve" name="reserve" method="post">
                   <!-- 수정<form class="rd-mailform form-fix" id="bookingBtn"> -->
                     <div class="row row-20 row-fix">
                       <div class="col-sm-12 col-lg-6">
@@ -208,10 +202,10 @@ System.out.print(idse);
                         <label class="form-label-outside">대여지점</label>
                         <div class="form-wrap form-wrap-inline">
                           <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="place">
-                            <option value="1">전체보기</option>
-                            <option value="2">강남지점</option>
-                            <option value="3">잠실지점</option>
-                            <option value="4">구로지점</option>
+                            <option value="모든지점">모든지점</option>
+                            <option value="강남지점">강남지점</option>
+                            <option value="잠실지점">잠실지점</option>
+                            <option value="구로지점">구로지점</option>
                           </select>
                         </div>
                       </div>
@@ -219,11 +213,11 @@ System.out.print(idse);
                         <label class="form-label-outside">차량유형</label>
                         <div class="form-wrap form-wrap-inline">
                           <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="car">
-                            <option value="1">전체보기</option>
-                            <option value="2">준중형</option>
-                            <option value="3">중형</option>
-                            <option value="4">대형</option>
-                            <option value="5">승합</option>
+                            <option value="모든차종">모든차종</option>
+                            <option value="준중형">준중형</option>
+                            <option value="중형">중형</option>
+                            <option value="대형">대형</option>
+                            <option value="승합">승합</option>
                           </select>
                         </div>
                       </div>                      
@@ -236,7 +230,18 @@ System.out.print(idse);
                       </div>
                     </div>
                     <div class="form-wrap form-button">
-                      <button class="button button-block button-secondary" type="submit" id="btnsearch">검색</button>
+                      <!-- <button class="button button-block button-secondary" type="submit" id="btnsearch">검색</button> -->
+                      <%
+                    if (session.getAttribute("id") != null) {
+                    %>
+                       <button class="button button-block button-secondary" type="button" id="btnsearch">검색</button>
+                       <%
+                    }else{
+                       %>
+                        <button class="button button-block button-secondary" type="button" id="btnsearch2">검색</button>
+                       <%
+                    }
+                       %>
                     </div>
                   </form>
                 </div>
@@ -293,7 +298,7 @@ System.out.print(idse);
         <div class="container container-bigger">
           <h3>이용후기</h3>
           <div class="divider divider-decorate"></div>
-          <a class="button button-sm button-secondary button-nina" href="sub/review.jsp">더보기</a>
+         <!--  <a class="button button-sm button-secondary button-nina" href="sub/review.jsp">더보기</a> -->
           <!-- Owl Carousel-->
           <div class="owl-carousel owl-layout-1" data-items="1" data-dots="true" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-autoplay="true">
             <article class="quote-boxed">
@@ -301,11 +306,11 @@ System.out.print(idse);
               </div>
               <div class="quote-boxed-main">
                 <div class="quote-boxed-text">
-                  <p>I wanted to thank you very much for planning the trip to France for my boyfriend and me. It was amazing and exceeded my expectations! We had a wonderful time and were very pleased with the accommodations in Paris and Bayeux. Our private/small tour guides were fantastic! I appreciate all the effort to get us to the Eiffel Tower finally. </p>
+                	<p>이용후기 내용.이용후기가 안좋은 곳이 너무 많아서 고르고 골라 선택했어요! 공항나오자마자 셔틀버스도 10분정도 기다려서 출발했고, 가는데에도 10분정도 간것 같아요. 도착해서 거의 바로 렌트했고 직원분들 모두 친절하였습니다. 차상태는 긁힌곳이 많았지만 미리 사진 찍어두라는 직원분 말씀에 저도 사진이랑 동영상도 미리 찍어놔서 문제될건 전혀 없었어요! 마지막 반납하는 부분까지도 매우 만족했습니다^^</p>
                 </div>
                 <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Ann McMillan</p>
-                  <p class="quote-boxed-small">Regular Customer</p>
+                  <p class="quote-boxed-cite">강남지점</p>
+                  <p class="quote-boxed-small">전*은 님</p>
                 </div>
               </div>
             </article>
@@ -314,11 +319,11 @@ System.out.print(idse);
               </div>
               <div class="quote-boxed-main">
                 <div class="quote-boxed-text">
-                  <p>이용후기 내용.ㄴ맂마ㅓㅣ;ㅈ헉ㅁ히ㅓㄱ댷ㄷㄱ;호ㅑㅅ히ㅗㄴㄱㄷ해ㅑ;ㄷㄱ멓;ㄷ겋;ㄷㄱㅁ햐ㅓ;ㅓㅁㄷㅇㅎ;ㅣ</p>
+                  <p>요즘 코로나19로 인하여 손님이 없어서인지 혼자서 일하고 계셨지만 친절하고 불편함 없게끔 해주셨습니다 전기차 렌트하면 충전비 요구하는데 24시간 빌리면서 완충되어 있으면 충전할일 없을것 같다고 했더니 충전비 감사하게도 안받으시네요</p>
                 </div>
                 <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">이용지점</p>
-                  <p class="quote-boxed-small">사용자</p>
+                  <p class="quote-boxed-cite">송파지점</p>
+                  <p class="quote-boxed-small">김*경 님</p>
                 </div>
               </div>
             </article>
@@ -327,15 +332,18 @@ System.out.print(idse);
               </div>
               <div class="quote-boxed-main">
                 <div class="quote-boxed-text">
-                  <p>이용후기 내용.ㄴ맂마ㅓㅣ;ㅈ헉ㅁ히ㅓㄱ댷ㄷㄱ;호ㅑㅅ히ㅗㄴㄱㄷ해ㅑ;ㄷㄱ멓;ㄷ겋;ㄷㄱㅁ햐ㅓ;ㅓㅁㄷㅇㅎ;ㅣ</p>
+                  <p>원하는 차량 너무 편하게 깨끗하게 이용 잘했어요! 가격도 맘에들고 거기다 가는 곳에 카페가 있어서 아아 한잔 무료! 정말 추가요금 이런거 하나도 없이 완전 즐거운 여행되었어요^^ 다음에 또 이용하겠습니다!</p>
                 </div>
                 <div class="quote-boxed-meta">
                   <p class="quote-boxed-cite">이용지점</p>
-                  <p class="quote-boxed-small">사용자</p>
+                  <p class="quote-boxed-small">박*정 님</p>
                 </div>
               </div>
             </article>
           </div>
+          
+          <a class="button button-sm button-secondary button-nina" href="sub/review.jsp" style=" margin: 0; padding: 15px 60px; font-weight: bold;">더보기</a>
+          
         </div>
       </section>
 

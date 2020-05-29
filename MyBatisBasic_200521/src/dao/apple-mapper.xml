@@ -63,14 +63,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
  <select id="myPage_reserve" resultType="model.RentListBean" 	parameterType="Integer">
 select RENTNO,	RENTDATE	,RETURNDATE	,CARNO,	MEMBERNO,	PSGNUM	,OFCNO,	RPRICE	
- from rentlist WHERE MEMBERNO = ${value}
+ from rentlist WHERE MEMBERNO = #{VLAUE}
  </select>
  
 
 <select id="myQnAselect" resultType="model.QnaBean"  parameterType="Integer">
 	SELECT qtitle,qcontents,qanswer,qstate 
 	FROM qna
-	WHERE writer=102
+	WHERE writer=#{VLAUE}
 </select>
  
  

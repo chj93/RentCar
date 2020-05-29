@@ -17,14 +17,15 @@
 <!-- Stylesheets -->
 <link rel="stylesheet" type="text/css"
 	href="//fonts.googleapis.com/css?family=Oswald:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/fonts.css">
 <link
 	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
 	rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
 	
-	<script>
+<script>
 
 $(function(){
 	$("input#loginbtn").click(function(){
@@ -154,6 +155,8 @@ margin-left: -20px;
 							%>
 							<a class="button button-sm button-secondary button-nina"
 								href="login.jsp">Login</a>
+							<a class="button button-sm button-secondary button-nina"
+								href="joinRentcar.jsp">Join</a>
 							<%
 								} else {
 									String userid = (String) session.getAttribute("id");
@@ -164,8 +167,6 @@ margin-left: -20px;
 							%>
 
 
-							<a class="button button-sm button-secondary button-nina"
-								href="joinRentcar.jsp">Join</a>
 						</div>
 					</div>
 				</nav>
@@ -209,8 +210,8 @@ margin-left: -20px;
 	<!-- Global Mailform Output-->
 	 
 	<!-- Javascript-->
-	<script src="js/core.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="../js/core.min.js"></script>
+	<script src="../js/script.js"></script>
 	<!-- coded by barber-->
 </body>
 </html>

@@ -12,6 +12,7 @@ import model.OfficeBean;
 import model.FuelBean;
 import model.NoticeBean;
 import model.RentCarBean;
+import model.SelectCarListBean;
 
 
 
@@ -94,4 +95,28 @@ public class RentCarDAO {
 		}
 		return 0;
 	}
+	//예약
+	public static List<SelectCarListBean>seachRentCar(HashMap<String, Object>map){
+		return sqlSessionFactory.openSession().selectList("seachRentCar",map);
+	}
+	
+	public static void updateState(int no) {
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			sqlSession.update("updateState", no);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			sqlSession.rollback();
+		} finally {
+			try {
+				if(sqlSession!=null)sqlSession.close();				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+	
 }

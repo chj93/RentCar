@@ -12,7 +12,7 @@
         out.println("<h1>로그아웃 되었습니다.</h1>");
 
      
-        response.sendRedirect("index.jsp"); // 로그인 화면으로 다시 돌아간다.
+        response.sendRedirect("../index.jsp"); // 로그인 화면으로 다시 돌아간다.
     %>
 
 

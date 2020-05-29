@@ -64,7 +64,10 @@
 /* 		System.out.print("여기까지" + name); */
 
 		MemberDao.insertMember(member2);
+		
 		response.sendRedirect("memberSuccess.jsp");
 	%>
+	
+	<%=member2 %>
 </body>
 </html>

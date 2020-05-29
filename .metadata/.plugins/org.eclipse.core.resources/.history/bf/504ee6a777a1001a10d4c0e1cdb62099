@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bean.rent">
+
+	<select id="selectOffice" resultType="model.OfficeBean">
+		SELECT OFCNO,OFCNAME,MGRNAME,MEMNO,OFCTEL,OFCADDR
+		FROM OFFICE
+		ORDER BY OFCNO
+	</select>
+	<select id="selectnotice" resultType="notice" parameterType="java.util.HashMap">
+		select RM,NTCNO,NTITLE,WRITER,NCONTENTS,NREGDATE
+		FROM(
+		select ROWNUM RM,NTCNO,NTITLE,WRITER,NCONTENTS,NREGDATE
+		FROM(
+		SELECT NTCNO,NTITLE,WRITER,NCONTENTS,NREGDATE
+		FROM notice
+		<if test="query!=null and data!=null">
+			<where>	NTITLE LIKE '%'||#{searchValue}||'%'</where>
+		</if>
+		ORDER BY NTCNO DESC))
+		where RM BETWEEN ${start} AND ${end}
+	</select>
+	<insert id="insertnotice" parameterType="notice">
+		INSERT INTO NOTICE VALUES(#{ntcno},#{ntitle},
+		#{writer},#{ncontents},SYSDATE)
+	</insert>
+	<select id="getRow" parameterType="java.util.HashMap" resultType="int">
+		select count(*) from notice
+		<choose>
+			<when test="searchValue!=null">
+				where NTITLE LIKE '%'||#{searchValue}||'%'
+			</when>
+		</choose>
+	</select>	
+	
+	
+	
+</mapper>

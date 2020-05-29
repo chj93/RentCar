@@ -67,6 +67,8 @@
 .pagination ul a {
   display: block;
   height: 100%;
+  color: #000;
+  font-weight: bold;
 }
 .pagination ul .first a,
 .pagination ul .prev a,
@@ -212,7 +214,7 @@ function searchData(){
     int startPage=1+(currentBlock-1)*pageSize;
     int endPage=(pageSize+(currentBlock-1)*pageSize);
     endPage=(endPage)>=totalPage?totalPage:endPage;
-    out.println(totalPage+" "+currentBlock);
+    
     map.put("start",start);
     map.put("end",end);	 
 	list=RentCarDAO.selectnotice(map);
