@@ -1,3 +1,8 @@
+<%@page import="java.util.HashMap"%>
+
+
+<%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -8,12 +13,38 @@
 <script type="text/javascript">
 $(function(){
 	$("button#btnsearch").click(function(){
-		//alert('test');
+		//5.28이전
 		$("form").submit();
 		
-	});	
+	});
+	
+	//5.28 이혜진 추가
+	$(function(){
+		 
+		$("button#btnsearch2").click(function(){
+			alert('로그인이 필요합니다')
+		})
+		
+		$("button#btnsearch").click(function(){
+			 
+			document.reserve.submit(); 	
+		});	
+		
+		$("a#mypage").click(function(){
+			location.href="myPage.jsp";
+	 	});
+	 
+	});
+	
 });
+		
 </script>
+<%
+ boolean idse =session.getAttribute("id")==null;
+System.out.print(idse);
+%>
+
+
   <head>
     <!-- Site Title-->
     <title>SIST RENTCAR</title>
@@ -40,7 +71,7 @@ $(function(){
               <div class="rd-navbar-panel">
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- logo -->
-                <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
+                <div class="rd-navbar-brand"><a class="brand-name" href="index.jsp"><img class="logo-default" src="images/logo.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
               </div>
               <!-- 웹 var. 메뉴바 -->
               <div class="rd-navbar-aside-center">
@@ -58,11 +89,38 @@ $(function(){
                 </div>
               </div>
               <div class="rd-navbar-aside-right">
+              
+              
+              <!-- 
               	<a class="button button-sm button-secondary button-nina" href="sub/login.jsp">Login</a>
-              	<a class="button button-sm button-secondary button-nina" href="sub/join.jsp">Join</a>
+              	<a class="button button-sm button-secondary button-nina" href="sub/.jsp">Join</a>
               </div>
             </div>
-          </nav>
+          </nav> -->
+				<%//5.28 이혜진 추가
+					if (session.getAttribute("id") == null) {
+				%>
+				<a class="button button-sm button-secondary button-nina"
+					href="login.jsp">Login</a>
+				<%
+					} else {
+						String userid = (String) session.getAttribute("id");
+						
+				%>
+				<b><%=userid%>님 환영합니다</b>
+				<a class="button button-sm button-secondary button-nina" href="logoutPro.jsp">Logout</a>
+				<a class="button button-sm button-secondary button-nina" name="mypage" id="mypage" >MyPage</a>
+				<%
+					}
+				%>
+
+
+						<a class="button button-sm button-secondary button-nina"
+							href="sub/joinRentcar.jsp">Join</a>
+					</div>
+				</div>
+			</nav>          
+
         </div>
       </header>
       <!------------------ 슬라이드 - 내용수정 --------------------->

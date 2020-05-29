@@ -1,3 +1,7 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="dao.MemberDao"%>
+<%@page import="model.RentCarBean"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -8,9 +12,12 @@
 <script type="text/javascript">
 $(function(){
 	$("button#btnsearch").click(function(){
-		//alert('test');
-		$("form").submit();
+		document.reserve.submit(); 	
 	});	
+	
+	$("a#mypage").click(function(){
+		location.href="myPage.jsp";
+ 	});
 });
 </script>
   <head>
@@ -61,8 +68,32 @@ $(function(){
                 </div>
               </div>
               <div class="rd-navbar-aside-right">
+              <!-- 5.27
               	<p>[ADMIN]OOO님 환영합니다.</p>
               	<a class="button button-sm button-secondary button-nina" href="index.jsp">LOGOUT</a>
+              	 -->
+              	 
+				<%/*5.28 이혜진 추가*/
+					if (session.getAttribute("id") == null) {
+				%>
+				<a class="button button-sm button-secondary button-nina"
+					href="login.jsp">Login</a>
+				<%
+					} else {
+						String userid = (String) session.getAttribute("id");
+						
+				%>
+				<b><%=userid%>님 환영합니다</b>
+				<a class="button button-sm button-secondary button-nina" href="logoutPro.jsp">Logout</a>
+				 
+				<%
+					}
+				%>
+
+				<a class="button button-sm button-secondary button-nina"
+					href="joinRentcar.jsp">Join</a>
+              	 
+              	 
               </div>
             </div>
           </nav>

@@ -37,3 +37,16 @@
 0:0:0:0:0:0:0:1 - - [28/May/2020:20:18:12 +0900] "GET /MyBatisBasic_200521/sistADD/sub/community.jsp HTTP/1.1" 500 2596
 127.0.0.1 - - [28/May/2020:20:20:26 +0900] "GET / HTTP/1.1" 404 750
 0:0:0:0:0:0:0:1 - - [28/May/2020:20:20:28 +0900] "GET /MyBatisBasic_200521/sistADD/sub/community.jsp HTTP/1.1" 200 10248
+127.0.0.1 - - [28/May/2020:20:45:25 +0900] "GET / HTTP/1.1" 404 750
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:45:26 +0900] "GET /MyBatisBasic_200521/sistADD/sub/login.jsp HTTP/1.1" 200 7514
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/index.jsp HTTP/1.1" 200 18062
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/quote-user-1-210x210.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/landing-private-airlines-03-570x370.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/quote-user-3-210x210.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/landing-private-airlines-01-570x370.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/landing-private-airlines-02-570x370.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/quote-user-2-210x210.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/divider-decorate.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/swiper-slide-1.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/swiper-slide-3.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/May/2020:20:49:14 +0900] "GET /MyBatisBasic_200521/sistADD/images/swiper-slide-2.jpg HTTP/1.1" 304 -

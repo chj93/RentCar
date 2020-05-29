@@ -1,3 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="dao.MemberDao"%>
+<%@page import="model.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
@@ -9,6 +14,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+
 
 <script type="text/javascript">
 
@@ -36,6 +43,79 @@
 	    margin-right: 5px;
 	}
 	</style>
+	
+	<script type="text/javascript">
+	
+	$(function(){
+   //최상단 체크박스 클릭
+	    $("#checkall").click(function(){
+	        //클릭되었으면
+	    	 if ($("#checkall").is(':checked')) {
+	                $("input[type=checkbox]").prop("checked", true);
+	            } else {
+	                $("input[type=checkbox]").prop("checked", false);
+	            }
+	        
+	        
+
+	 	    $("#checkall").click(function(){
+	 	    	 var chk = $("#checkall").prop("checked");
+	 	    	 if(chk) {
+	 	    	  $("input[type=checkbox]").prop("checked", true);
+	 	    	 } else {
+	 	    	  $("input[type=checkbox]").prop("checked", false);
+	 	    	 }
+	 	    	});
+	 	
+	 	    $("input[type=checkbox]").click(function(){
+	 	    	  $("#checkall").prop("checked", false);
+	 	    	 });
+	        
+	    });
+	 
+	    $('input[type=checkbox]:input[value="no"]').prop("checked", true);  
+	    
+	 });
+	    
+			  function onMemberDelete(no){
+
+				  
+				  var memberChk = document.getElementsByName("deleteMember");
+				  var chked = false;
+				  var indexid = false;
+				  for(i=0; i < memberChk.length; i++){
+				   if(memberChk[i].checked){
+				    if(indexid){
+				      no = no + '-';
+				    }
+				    no = no + memberChk[i].value;
+				    indexid = true;
+				   }
+				  }
+				  if(!indexid){
+				   alert("삭제할 사용자를 체크해 주세요");
+				   return;
+				  }
+				  document.userForm.delUserid.value = no;       // 체크된 사용자 아이디를 '-'로 묶은 userid 를      document.userForm.delUserid 의 value로 저장
+				  
+				  var agree=confirm("삭제 하시겠습니까?");
+				     if (agree){
+				   document.userForm.execute.value = "userDel";
+				     document.userForm.submit();
+				     }
+				  }﻿
+	    
+	    
+    
+ 
+ 
+	 function onMemberDelete(no) {
+		 alert('onMemberDelete 삭제? = ' + no) 
+	}
+				  
+				 
+	</script>
+	
 	
   </head>
   <body>
@@ -73,8 +153,27 @@
                 </div>
               </div>
               <div class="rd-navbar-aside-right">
-              	<p>[ADMIN]OOO님 환영합니다.</p>
-              	<a class="button button-sm button-secondary button-nina" href="../index.jsp">LOGOUT</a>
+               
+              	<%/*추가*/
+								if (session.getAttribute("id") == null) {
+							%>
+							<a class="button button-sm button-secondary button-nina"
+								href="login.jsp">Login</a>
+							<%
+								} else {
+									String userid = (String) session.getAttribute("id");
+									
+							%>
+							<b><%=userid%>님 환영합니다</b>
+							<a class="button button-sm button-secondary button-nina" href="logoutPro.jsp">Logout</a>
+					 
+							<%
+								}
+							%>
+
+
+							<a class="button button-sm button-secondary button-nina"
+								href="joinRentcar.jsp">Join</a>
               </div>
             </div>
           </nav>
@@ -83,6 +182,7 @@
      
      <!------------------------------ 내용입력 ------------------------>
     <section class="section section-lg bg-gray-lighter novi-background bg-cover text-center" id="reviews">
+    <form name="userForm" method="post">
 		<div class="container">
 		  <div>
 		   <h2>회원 목록</h2>
@@ -90,42 +190,65 @@
 		  </div>
 		
 		  
+		    <%
+		    
+		    List<MemberBean> list = null;
+		    HashMap<String, Object> map = new HashMap<String, Object>();
+			list = MemberDao.selectMember(map);
+		    
+			
+
+			 
+		    %>
 		 <!--  <p>The .table-hover class enables a hover state on table rows:</p>    -->         
 		  <table class="table table-hover">
 		    <thead>
 		      <tr>
-		        <th><input type="checkbox"/></th>
+		        <th><input type="checkbox" id="checkall"/></th>
 		        <th>번호</th>
-		        <th>명</th>
-		        <th>장</th>
-		        <th>번호</th>
-		        <th>전화번호</th>
+		        <th>아이디</th>
+		        <th>성명</th>
 		        <th>주소</th>
-		        <th>-</th>
+		        <th>전화번호</th>
+		        <th>메일</th>
+		        <th>생년월일</th>
 		      </tr>
 		    </thead>
-		    
+ 
+               
 		    <tbody>
-		      
+		       <%
+		       
+		       
+		       
+		       for (MemberBean b : list) {	  
+		    	  
+		       %>
 		    	<tr>
-			        <td><input type="checkbox"/></td>
-			        <td></td>
-			        <td></td>
-			        <td></td>
-			        <td></td>
-			        <td></td>
-			        <td></td>
+			        <td><input type="checkbox" id="check" value="<%b.getMemno();%>"/></td>
+			        <td><%=b.getMemno() %></td>
+			        <td><%=b.getMemid() %></td>
+			        <td><%=b.getMname() %></td>
+			        <td><%=b.getMadress() %></td>
+			        <td><%=b.getMemtel() %></td>
+			        <td><%=b.getMemail() %></td>
+			        <td><%=b.getMbirth()%></td>
+			        
+			         
+ 
 			        <td>
 			        	<a class="button button-sm button-secondary button-nina smallBtn" href="#">선택수정</a>
-			  			<a class="button button-sm button-secondary button-nina smallBtn" href="#">선택삭제</a>
+			  			<a class="button button-sm button-secondary button-nina smallBtn" href="#" name="deleteMember" id="deleteMember" onclick="onMemberDelete(<%=b.getMemno() %>)">선택삭제</a>
 			        </td>
 		      	</tr>
-
+ <%
+		       }
+ %>
 		    </tbody>
 		  </table>
 		</div>
 	
-		
+		</form>
 	</section>
  
       <!-------------------------- Footer ---------------------->

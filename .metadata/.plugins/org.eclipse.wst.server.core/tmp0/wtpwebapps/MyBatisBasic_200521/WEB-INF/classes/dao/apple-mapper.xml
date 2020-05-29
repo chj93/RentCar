@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	WHERE MEMID = #{memid}
 	</select>
 
-    <select id="selectZipCode" parameterType="java.lang.String" resultType="sist.com.model.ZipBean"> <!-- 회원가입시 우편번호 -->
+    <select id="selectZipCode" parameterType="java.lang.String" resultType="model.ZipBean"> <!-- 회원가입시 우편번호 -->
     SELECT ZIPCODE,SIDO,GUGUN,DONG,NVL(BUNJI,' ')BUNJI
     FROM ZIPCODE
     WHERE DONG LIKE '%'||#{value}||'%'
@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     
  
-   <insert id="insertMember" parameterType="sist.com.model.MemberBean"> <!--회원 추가 쿼리 -->
+   <insert id="insertMember" parameterType="model.MemberBean"> <!--회원 추가 쿼리 -->
  
 		INSERT INTO MEMBER
 		VALUES(memno_seq.nextval,#{memid},#{mempw},#{mname},#{madress},#{memtel},#{memail},#{mbirth},#{mlevel})
@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 
-<select id="memberInfo" parameterType="String" resultType="sist.com.model.MemberBean">
+<select id="memberInfo" parameterType="String" resultType="model.MemberBean">
 	SELECT MEMID, MEMPW, MNAME, MADRESS ,MEMTEL ,MEMAIL, MBIRTH
 	FROM MEMBER
 	WHERE memid=#{VLAUE}
@@ -43,31 +43,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
  
 
-<select id="selectMember" resultType="sist.com.model.MemberBean" parameterType="java.util.HashMap">
+<select id="selectMember" resultType="model.MemberBean" parameterType="java.util.HashMap">
 	 SELECT MEMNO,MEMID,MEMPW,MNAME,MADRESS,MEMTEL,MEMAIL,MBIRTH,MLEVEL
 	 FROM MEMBER  
 	</select>
 
-<select id="fineNo" parameterType="String" resultType="sist.com.model.MemberBean">
+<select id="fineNo" parameterType="String" resultType="model.MemberBean">
 	SELECT MEMNO
 	FROM MEMBER
 	WHERE MEMID=#{VLAUE}
 </select>
 
-<select id="findlevel" parameterType="String" resultType="sist.com.model.MemberBean">
+<select id="findlevel" parameterType="String" resultType="model.MemberBean">
 	SELECT MLEVEL
 	FROM MEMBER
 	WHERE MEMID=#{VLAUE}
 </select>
 
 
- <select id="myPage_reserve" resultType="sist.com.model.RentListBean" 	parameterType="Integer">
+ <select id="myPage_reserve" resultType="model.RentListBean" 	parameterType="Integer">
 select RENTNO,	RENTDATE	,RETURNDATE	,CARNO,	MEMBERNO,	PSGNUM	,OFCNO,	RPRICE	
  from rentlist WHERE MEMBERNO = ${value}
  </select>
  
 
-<select id="myQnAselect" resultType="sist.com.model.QnaBean"  parameterType="Integer">
+<select id="myQnAselect" resultType="model.QnaBean"  parameterType="Integer">
 	SELECT qtitle,qcontents,qanswer,qstate 
 	FROM qna
 	WHERE writer=102
@@ -80,13 +80,13 @@ where memno=#{memno}
 
  </delete>
  
-	<insert id="insertTest" parameterType="sist.com.model.FuelBean">
+	<insert id="insertTest" parameterType="model.FuelBean">
 		INSERT INTO FUEL(FUELNO,FUELNAME)
 		VALUES(#{fuelno},#{fuelname})
 	</insert>
 
             
-	<select id="selectRentCar" resultType="sist.com.model.SelectCarList">
+	<select id="selectRentCar" resultType="model.SelectCarList">
 		SELECT RENTCAR.RCNO,RENTCAR.RCMODEL,RENTCAR.RCPRICE,RENTCAR.RCIMG,RENTCAR.RCSTATE,OFFICE.OFCNAME,NAVIGATION.NAVINAME,FUEL.FUELNAME,SEGMENT.SGMTNAME,MAKER.MNAME
 		FROM RENTCAR, OFFICE, NAVIGATION, SEGMENT, FUEL, MAKER
 		WHERE RENTCAR.OFCNO = OFFICE.OFCNO AND SEGMENT.SGMTNO = RENTCAR.SGMTNO AND RENTCAR.MAKERNO = MAKER.MAKERNO AND FUEL.FUELNO = RENTCAR.FUELNO AND RENTCAR.NAVINO = NAVIGATION.NAVINO

@@ -5,7 +5,7 @@ public class MemberBean {
 	private String mempw;
 	private String mname;
 	private String madress;
-	private int memtel;
+	private String memtel;
 	private String memail;
 	private String mbirth;
 	private String mlevel;
@@ -40,10 +40,10 @@ public class MemberBean {
 	public void setMadress(String madress) {
 		this.madress = madress;
 	}
-	public int getMemtel() {
+	public String getMemtel() {
 		return memtel;
 	}
-	public void setMemtel(int memtel) {
+	public void setMemtel(String memtel) {
 		this.memtel = memtel;
 	}
 	public String getMemail() {
@@ -64,5 +64,11 @@ public class MemberBean {
 	public void setMlevel(String mlevel) {
 		this.mlevel = mlevel;
 	}
-	
+	@Override
+	public String toString() {
+		return "MemberBean [memno=" + memno + ", memid=" + memid + ", mempw=" + mempw + ", mname=" + mname
+				+ ", madress=" + madress + ", memtel=" + memtel + ", memail=" + memail + ", mbirth=" + mbirth
+				+ ", mlevel=" + mlevel + "]";
+	}
+
 }
