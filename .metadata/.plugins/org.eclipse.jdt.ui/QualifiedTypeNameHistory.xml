@@ -6,4 +6,5 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 <fullyQualifiedTypeName name="model.NoticeBean"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="model.SelectCarListBean"/>
 </qualifiedTypeNameHistroy>

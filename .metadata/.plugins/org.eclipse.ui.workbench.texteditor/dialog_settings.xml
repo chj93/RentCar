@@ -6,42 +6,44 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="이용후기" key="selection"/>
+		<item value="form" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="이용후기"/>
-			<item value="&quot;css/"/>
-			<item value="css"/>
-			<item value="js/"/>
-			<item value="images/"/>
-			<item value="html"/>
+			<item value="form"/>
+			<item value="action"/>
 			<item value="jsp"/>
+			<item value="jps"/>
+			<item value="더보기"/>
+			<item value="src=&quot;images/landing-private-airlines-01-570x370.jpg&quot;"/>
 			<item value="join"/>
-			<item value="jion"/>
-			<item value="&quot;sist.com."/>
-			<item value="sist.com."/>
-			<item value="&lt;%"/>
-			<item value="RentCarBean"/>
-			<item value="mypage"/>
-			<item value="추가"/>
+			<item value=".pagination ul a "/>
+			<item value="image"/>
+			<item value="dateForm"/>
+			<item value="insertTest"/>
+			<item value="seachRentCar"/>
+			<item value="html"/>
+			<item value="js"/>
+			<item value="&quot;css/"/>
 		</list>
 		<list key="replacehistory">
-			<item value=""/>
 			<item value="&quot;../css/"/>
-			<item value="../js/"/>
+			<item value="../images"/>
 			<item value="../images/"/>
-			<item value="&quot;"/>
+			<item value="&quot;../images/"/>
 			<item value="../css/"/>
+			<item value=""/>
+			<item value="../js/"/>
+			<item value="&quot;"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="340" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="452" key="DIALOG_HEIGHT"/>
-		<item value="436" key="DIALOG_X_ORIGIN"/>
-		<item value="451" key="DIALOG_Y_ORIGIN"/>
+		<item value="1236" key="DIALOG_X_ORIGIN"/>
+		<item value="569" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

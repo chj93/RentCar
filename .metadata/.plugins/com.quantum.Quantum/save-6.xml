@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/C::/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.driver.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="10.2.0.1.0">
+			<jar fileName="C:\app\SIST108\product\11.2.0\dbhome_1\owb\wf\lib\ojdbc14.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="D:/javaEx/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/D::/javaEx/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>apple</name>
+			<username>APPLE</username>
+			<password>APPLE</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:orcl</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.driver.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\app\SIST108\product\11.2.0\dbhome_1\owb\wf\lib\ojdbc14.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>update rentcar set ofcno=2
+where rcno between 41 and 50</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set ofcno=3
+where rcno between 51 and 55</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set navino=1
+where navino is null</queryString>
+				</query>
+				<query>
+					<queryString>SELECT RENTCAR.RCNO,RENTCAR.RCMODEL,RENTCAR.RCPRICE,RENTCAR.RCIMG,RENTCAR.RCSTATE,OFFICE.OFCNAME,NAVIGATION.NAVINAME,FUEL.FUELNAME,SEGMENT.SGMTNAME,MAKER.MNAME
+		FROM RENTCAR, OFFICE, NAVIGATION, SEGMENT, FUEL, MAKER
+		WHERE RENTCAR.OFCNO = OFFICE.OFCNO AND SEGMENT.SGMTNO = RENTCAR.SGMTNO AND RENTCAR.MAKERNO = MAKER.MAKERNO AND FUEL.FUELNO = RENTCAR.FUELNO AND RENTCAR.NAVINO = NAVIGATION.NAVINO</queryString>
+				</query>
+				<query>
+					<queryString>CREATE SEQUENCE MEMBER_SEQ_NO</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE NOTICE MODIFY(NTITLE VARCHAR2(80))</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * FROM FUEL</queryString>
+				</query>
+				<query>
+					<queryString>DELETE FROM RENTLIST CASCADE</queryString>
+				</query>
+				<query>
+					<queryString>ROLLBACK</queryString>
+				</query>
+				<query>
+					<queryString>SELECT * FROM  RENTLIST</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO NOTICE VALUES(1,'[예약 Tip] 예약 전 꼭 확인하세요!',100,'공지사항',SYSDATE)</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO NOTICE VALUES(2,'[서비스안내] 1시간 전, 당일 예약 안내',100,'공지사항',SYSDATE)</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO NOTICE VALUES(3,'[서비스안내] 렌트카 야간인수·조기반납(운영시간 외) 안내',100,'공지사항',SYSDATE)</queryString>
+				</query>
+				<query>
+					<queryString>select * from zipcode</queryString>
+				</query>
+				<query>
+					<queryString>Create SEQUENCE memno_seq</queryString>
+				</query>
+				<query>
+					<queryString>delete member where memno=1</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO member(MEMNO) VALUES (MEMNO_SEQ.NEXTVAL)</queryString>
+				</query>
+				<query>
+					<queryString>select * from member</queryString>
+				</query>
+				<query>
+					<queryString>update rentcar set rcstate='예약가능'</queryString>
+				</query>
+				<query>
+					<queryString>select * from rentcar</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/C::/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/file::/C::/Users/USER/Desktop/JAVA/01_환경설정/eclipse-jee-2018-09-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10.jar!/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>
